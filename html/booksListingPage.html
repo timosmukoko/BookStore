@@ -1,0 +1,236 @@
+<!DOCTYPE html5>
+<html>
+<head>
+  
+  <title>Online Bookstore</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .genre-item {
+      cursor: pointer;
+    }
+
+
+    .genre-item:hover {
+      transform: scale(1.05);
+    }
+    .card-body:hover{
+        transform: scale(1.05);
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    
+    .img {
+      height: 20px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .card-body {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .card-body h5 {
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+
+    .genre-item.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+
+    .footer {
+      background: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+<!--Navigation Bar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">Bookstore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Genres</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+
+      <!--Dropdown Cart-->
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="cartDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          Cart <span id="cartCount" class="badge bg-primary">0</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cartDropdown">
+          <li><div id="cartItems" class="p-2">Your cart is empty.</div></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><button id="clearCart" class="dropdown-item">Clear Cart</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!--Main Content-->
+
+<div class="container mt-4">
+  <div class="row">
+
+    <!--Genre Sidebar-->
+
+    <div class="col-md-3">
+      <h5>Genres</h5>
+      <ul class="list-group">
+        <li class="list-group-item genre-item" data-genre="all"><h5>All</h5></li>
+        <li class="list-group-item genre-item" data-genre="computing & it">Computing & IT</li>
+        <li class="list-group-item genre-item" data-genre="technology">Technology</li>
+        <li class="list-group-item genre-item" data-genre="mathematics & science">Mathematics & Science</li>
+        <li class="list-group-item genre-item" data-genre="medicine">Medicine</li>
+        <li class="list-group-item genre-item" data-genre="earth sciences">Earth Sciences</li>
+        <li class="list-group-item genre-item" data-genre="economics & finance">Economics & Finance</li>
+        <li class="list-group-item genre-item" data-genre="law">Law</li>
+        <li class="list-group-item genre-item" data-genre="sci-fi">Sci-Fi</li>
+        <li class="list-group-item genre-item" data-genre="literature & literary studies">Literature & Literary Studies</li>
+        <li class="list-group-item genre-item" data-genre="humanities books">Humanities Books</li>
+        <li class="list-group-item genre-item" data-genre="language">Language</li>
+        <li class="list-group-item genre-item" data-genre="social sciences">Social Sciences</li>
+        <li class="list-group-item genre-item" data-genre="arts books">Arts Books</li>
+        <li class="list-group-item genre-item" data-genre="biography & true stories">Biography & True Stories</li>
+        <li class="list-group-item genre-item" data-genre="english language teaching">English Language Teaching</li>
+        <li class="list-group-item genre-item" data-genre="health & personal development">Health & Personal Development</li>
+        <li class="list-group-item genre-item" data-genre="lifestyle, cooking & leisure">Lifestyle, Cooking & Leisure</li>
+        <li class="list-group-item genre-item" data-genre="reference books">Reference Books</li>
+       
+      </ul>
+    </div>
+
+    <!-- Book Grid -->
+    <div class="col-md-9">
+      <div class="row" id="bookGrid">
+        <!-- Books dynamically added here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 Advanced Shop. All rights reserved.</p>
+  </footer>
+
+<script>
+  // Book Data
+  const books = [
+
+    {title:"Computer and Information Security Handbook",author:"John R. Vacca", price:" EUR 199.97",genre:"computing & it",img:"https://images-eu.ssl-images-amazon.com/images/I/51KNZoUbBjL._AC_UL400_SR300,400_.jpg"},
+    {title:"Probabilistic Machine Learning ",author:"Kevin P. Murphy", price:" EUR 105",genre:"technology",img:"https://images-eu.ssl-images-amazon.com/images/I/71GaJ8soqhL._AC_UL400_SR300,400_.jpg"},
+    {title:"Space Mathematics: Math Problems Based on Space Science ",author:"Kastner Kastner", price:" EUR 17.13",genre:"mathematics & science",img:"https://images-eu.ssl-images-amazon.com/images/I/810eICMpXaL._AC_UL400_SR300,400_.jpg"},
+    {title:"Cracking the MRCS Part A  ",author:"Olivia A M Smith", price:" EUR 56.8",genre:"medicine",img:"https://images-eu.ssl-images-amazon.com/images/I/618rkGJoE5L._AC_UL400_SR300,400_.jpg"},
+    {title:"The Science of the Earth: The Secrets of Our Planet Revealed",author:"Chris Packham", price:" EUR 23.25",genre:"earth sciences",img:"https://images-eu.ssl-images-amazon.com/images/I/91crBOULSoL._AC_UL400_SR300,400_.jpg"},
+    {title:"Mathematics for Economics and Finance: Methods and Modelling  ",author:"Martin Anthon", price:" EUR 46.71",genre:"economics & finance",img:"https://m.media-amazon.com/images/I/6138NeSv0GL._AC_UY327_FMwebp_QL65_.jpg"},
+    {title:"Essentials of Irish ",author:"Dáithí Mac Cárthaigh", price:" EUR 36.34",genre:"law",img:"https://images-eu.ssl-images-amazon.com/images/I/41eS1ctMSaL._AC_UL400_SR300,400_.jpg"},
+    {title:"The Usborne Book of the Future  ",author:"Kenneth Gatland and David Jefferis", price:" EUR 12.05",genre:"sci-fi",img:"https://images-eu.ssl-images-amazon.com/images/I/81JHgTFeZTL._AC_UL400_SR300,400_.jpg"},
+    {title:"An Introduction to Literature, Criticism and Theory ",author:"Andrew Bennett  and Nicholas Royle", price:" EUR 27.11",genre:"literature & literary studies",img:"https://images-eu.ssl-images-amazon.com/images/I/81OyNVID54L._AC_UL400_SR300,400_.jpg"},
+    {title:"The Ascent of Humanity: Civilization and the Human Sense of Self  ",author:"Charles Eisenstein", price:" EUR 20.45",genre:"humanities books",img:"https://images-eu.ssl-images-amazon.com/images/I/81x5rYmTCAL._AC_UL400_SR300,400_.jpg"},
+    {title:"The Unfolding Of Language ",author:"Guy Deutscher", price:" EUR 12.01",genre:"language",img:"https://images-eu.ssl-images-amazon.com/images/I/81emDTJDH7L._AC_UL400_SR300,400_.jpg"},
+    {title:"Quantitative Social Science Data with R ",author:"Brian J. Fogarty", price:" EUR 46.53",genre:"social sciences",img:"https://images-eu.ssl-images-amazon.com/images/I/71QdFhhlJkL._AC_UL400_SR300,400_.jpg"},
+    {title:"Art: The Definitive Visual Guide",author:"Andrew Graham Dixon", price:" EUR 35.1",genre:"arts books",img:"https://images-eu.ssl-images-amazon.com/images/I/616vYWwf0aL._AC_UL400_SR300,400_.jpg"},
+    {title:"The Dark Side of the Mind: True Stories from My Life as a Forensic Psychologist",author:"Kerry Daynes", price:" EUR 7.74",genre:"biography & true stories",img:"https://images-eu.ssl-images-amazon.com/images/I/81GzRyo-GDL._AC_UL400_SR300,400_.jpg"},
+    {title:"AQA AS and A Level English Language Student Book",author:"Dan Clayton and Angela Goddard", price:" EUR 32.34",genre:"english language teaching",img:"https://images-eu.ssl-images-amazon.com/images/I/71gMisfJMlL._AC_UL400_SR300,400_.jpg"},
+    {title:"The Economics of Health and Health Care ",author:"Sherman Folland and Allen Charles Goodman", price:" EUR 71.18",genre:"health & personal development",img:"https://images-eu.ssl-images-amazon.com/images/I/61soNCyS4JL._AC_UL400_SR300,400_.jpg"},
+    {title:"The HBD Cookbook: Life-changing recipes for long-term health and perfect weight",author:"Petronella Ravenshear", price:" EUR 12.02",genre:"lifestyle, cooking & leisure",img:"https://images-eu.ssl-images-amazon.com/images/I/71zMk4ujb1L._AC_UL400_SR300,400_.jpg"},
+    {title:"Othello: A Routledge Study Guide and Sourcebook ",author:"Andrew Hadfield", price:" EUR 22.24",genre:"reference books",img:"https://m.media-amazon.com/images/I/31eO3x5MgTL._SY445_SX342_.jpg"}
+
+  ];
+
+  let cart = [];
+
+  function renderBooks(filterGenre = "all") {
+    const grid = $("#bookGrid");
+    grid.empty();
+    const filteredBooks = filterGenre === "all" ? books : books.filter(book => book.genre === filterGenre);
+    filteredBooks.forEach(book => {
+      const bookCard = `
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="${book.img}" class="card-img-top" alt="${book.title}">
+            <div class="card-body">
+              <h5 class="card-title">${book.title}</h5>
+              <p class="card-text">Author: ${book.author}</p>
+              <p class="card-text">Price: €${book.price}</p>
+              <button class="btn btn-primary add-to-cart" data-title="${book.title}">Add to Cart</button>
+            </div>
+          </div>
+        </div>`;
+      grid.append(bookCard);
+    });
+  }
+
+  function updateCartDisplay() {
+    const cartItemsDiv = $("#cartItems");
+    const cartCount = $("#cartCount");
+    if (cart.length === 0) {
+      cartItemsDiv.html("Your cart is empty.");
+      cartCount.text(0);
+    } else {
+      const itemsHtml = cart.map(item => `<div>${item}</div>`).join("");
+      cartItemsDiv.html(itemsHtml);
+      cartCount.text(cart.length);
+    }
+  }
+
+  $(document).ready(function() {
+    // Render all books initially
+    renderBooks();
+
+    // Genre Click Event
+    $(".genre-item").click(function() {
+      $(".genre-item").removeClass("active");
+      $(this).addClass("active");
+      const genre = $(this).data("genre");
+      renderBooks(genre);
+    });
+
+    // Add to Cart
+    $(document).on("click", ".add-to-cart", function() {
+      const bookTitle = $(this).data("title");
+      cart.push(bookTitle);
+      updateCartDisplay();
+    });
+
+    // Clear Cart
+    $("#clearCart").click(function() {
+      cart = [];
+      updateCartDisplay();
+    });
+  });
+</script>
+
+</body>
+</html>

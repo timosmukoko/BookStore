@@ -15,9 +15,10 @@ header {
     width: 100%;
 }
 
-#home{
+#home {
     padding-top: 15rem;
 }
+
 #row-products {
     padding: 2rem;
 }
@@ -41,6 +42,11 @@ footer {
     position: relative;
 }
 
+.navbar-brand img {
+    width: 30%;
+    height: 8%;
+}
+
 .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
@@ -52,11 +58,11 @@ footer {
     /* flex-shrink: 0; */
 }
 
-.col-md-3 .card{
+.col-md-3 .card {
     width: 22rem;
 }
 
-.col-md-4 .card{
+.col-md-4 .card {
     width: 30rem;
 }
 
@@ -65,9 +71,10 @@ footer {
 }
 
 /* Login Form */
-#my-login-form{
+#my-login-form {
     padding-top: 12rem;
 }
+
 #login-form {
     max-width: 400px;
     margin: 2rem auto;
@@ -114,6 +121,7 @@ footer {
     font-size: 48px;
     margin-bottom: 20px;
 }
+
 .cta {
     display: inline-block;
     padding: 10px 20px;
@@ -122,4 +130,3 @@ footer {
     text-decoration: none;
     border-radius: 5px;
 }
-

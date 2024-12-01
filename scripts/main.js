@@ -49,7 +49,6 @@ function searchBooks() {
 }
 
 // Image Slider
-//required('dotenv').config();
 let currentIndex = 0;
 const slides = document.querySelectorAll("#slider .slides img");
 const totalSlides = slides.length;

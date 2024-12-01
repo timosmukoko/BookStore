@@ -1,23 +1,23 @@
 const books = [
 
-    {title:"Computer and Information Security Handbook",author:"John R. Vacca", price:" EUR 199.97",genre:"computing & it",img:"https://images-eu.ssl-images-amazon.com/images/I/51KNZoUbBjL._AC_UL400_SR300,400_.jpg"},
-    {title:"Probabilistic Machine Learning ",author:"Kevin P. Murphy", price:" EUR 105",genre:"technology",img:"https://images-eu.ssl-images-amazon.com/images/I/71GaJ8soqhL._AC_UL400_SR300,400_.jpg"},
-    {title:"Space Mathematics: Math Problems Based on Space Science ",author:"Kastner Kastner", price:" EUR 17.13",genre:"mathematics & science",img:"https://images-eu.ssl-images-amazon.com/images/I/810eICMpXaL._AC_UL400_SR300,400_.jpg"},
-    {title:"Cracking the MRCS Part A  ",author:"Olivia A M Smith", price:" EUR 56.8",genre:"medicine",img:"https://images-eu.ssl-images-amazon.com/images/I/618rkGJoE5L._AC_UL400_SR300,400_.jpg"},
-    {title:"The Science of the Earth: The Secrets of Our Planet Revealed",author:"Chris Packham", price:" EUR 23.25",genre:"earth sciences",img:"https://images-eu.ssl-images-amazon.com/images/I/91crBOULSoL._AC_UL400_SR300,400_.jpg"},
-    {title:"Mathematics for Economics and Finance: Methods and Modelling  ",author:"Martin Anthon", price:" EUR 46.71",genre:"economics & finance",img:"https://m.media-amazon.com/images/I/6138NeSv0GL._AC_UY327_FMwebp_QL65_.jpg"},
-    {title:"Essentials of Irish ",author:"Dáithí Mac Cárthaigh", price:" EUR 36.34",genre:"law",img:"https://images-eu.ssl-images-amazon.com/images/I/41eS1ctMSaL._AC_UL400_SR300,400_.jpg"},
-    {title:"The Usborne Book of the Future  ",author:"Kenneth Gatland and David Jefferis", price:" EUR 12.05",genre:"sci-fi",img:"https://images-eu.ssl-images-amazon.com/images/I/81JHgTFeZTL._AC_UL400_SR300,400_.jpg"},
-    {title:"An Introduction to Literature, Criticism and Theory ",author:"Andrew Bennett  and Nicholas Royle", price:" EUR 27.11",genre:"literature & literary studies",img:"https://images-eu.ssl-images-amazon.com/images/I/81OyNVID54L._AC_UL400_SR300,400_.jpg"},
-    {title:"The Ascent of Humanity: Civilization and the Human Sense of Self  ",author:"Charles Eisenstein", price:" EUR 20.45",genre:"humanities books",img:"https://images-eu.ssl-images-amazon.com/images/I/81x5rYmTCAL._AC_UL400_SR300,400_.jpg"},
-    {title:"The Unfolding Of Language ",author:"Guy Deutscher", price:" EUR 12.01",genre:"language",img:"https://images-eu.ssl-images-amazon.com/images/I/81emDTJDH7L._AC_UL400_SR300,400_.jpg"},
-    {title:"Quantitative Social Science Data with R ",author:"Brian J. Fogarty", price:" EUR 46.53",genre:"social sciences",img:"https://images-eu.ssl-images-amazon.com/images/I/71QdFhhlJkL._AC_UL400_SR300,400_.jpg"},
-    {title:"Art: The Definitive Visual Guide",author:"Andrew Graham Dixon", price:" EUR 35.1",genre:"arts books",img:"https://images-eu.ssl-images-amazon.com/images/I/616vYWwf0aL._AC_UL400_SR300,400_.jpg"},
-    {title:"The Dark Side of the Mind: True Stories from My Life as a Forensic Psychologist",author:"Kerry Daynes", price:" EUR 7.74",genre:"biography & true stories",img:"https://images-eu.ssl-images-amazon.com/images/I/81GzRyo-GDL._AC_UL400_SR300,400_.jpg"},
-    {title:"AQA AS and A Level English Language Student Book",author:"Dan Clayton and Angela Goddard", price:" EUR 32.34",genre:"english language teaching",img:"https://images-eu.ssl-images-amazon.com/images/I/71gMisfJMlL._AC_UL400_SR300,400_.jpg"},
-    {title:"The Economics of Health and Health Care ",author:"Sherman Folland and Allen Charles Goodman", price:" EUR 71.18",genre:"health & personal development",img:"https://images-eu.ssl-images-amazon.com/images/I/61soNCyS4JL._AC_UL400_SR300,400_.jpg"},
-    {title:"The HBD Cookbook: Life-changing recipes for long-term health and perfect weight",author:"Petronella Ravenshear", price:" EUR 12.02",genre:"lifestyle, cooking & leisure",img:"https://images-eu.ssl-images-amazon.com/images/I/71zMk4ujb1L._AC_UL400_SR300,400_.jpg"},
-    {title:"Othello: A Routledge Study Guide and Sourcebook ",author:"Andrew Hadfield", price:" EUR 22.24",genre:"reference books",img:"https://m.media-amazon.com/images/I/31eO3x5MgTL._SY445_SX342_.jpg"}
+    {title:"Computer and Information Security Handbook",author:"John R. Vacca", price:" EUR 199.97",genre:"computing & it",img:src="../images/img1.jpg"},
+    {title:"Probabilistic Machine Learning ",author:"Kevin P. Murphy", price:" EUR 105",genre:"technology",img:src="../images/img2.jpg"},
+    {title:"Space Mathematics: Math Problems Based on Space Science ",author:"Kastner Kastner", price:" EUR 17.13",genre:"mathematics & science",img:src="../images/img3.jpg"},
+    {title:"Cracking the MRCS Part A  ",author:"Olivia A M Smith", price:" EUR 56.8",genre:"medicine",img:src="../images/img4.jpg"},
+    {title:"The Science of the Earth: The Secrets of Our Planet Revealed",author:"Chris Packham", price:" EUR 23.25",genre:"earth sciences",img:src="../images/img5.jpg"},
+    {title:"Mathematics for Economics and Finance: Methods and Modelling  ",author:"Martin Anthon", price:" EUR 46.71",genre:"economics & finance",img:src="../images/img6.jpg"},
+    {title:"Essentials of Irish ",author:"Dáithí Mac Cárthaigh", price:" EUR 36.34",genre:"law",img:src="../images/img7.jpg"},
+    {title:"The Usborne Book of the Future  ",author:"Kenneth Gatland and David Jefferis", price:" EUR 12.05",genre:"sci-fi",img:src="../images/img8.jpg"},
+    {title:"An Introduction to Literature, Criticism and Theory ",author:"Andrew Bennett  and Nicholas Royle", price:" EUR 27.11",genre:"literature & literary studies",img:src="../images/img9.jpg"},
+    {title:"The Ascent of Humanity: Civilization and the Human Sense of Self  ",author:"Charles Eisenstein", price:" EUR 20.45",genre:"humanities books",img:src="../images/img10.jpg"},
+    {title:"The Unfolding Of Language ",author:"Guy Deutscher", price:" EUR 12.01",genre:"language",img:src="../images/img11.jpg"},
+    {title:"Quantitative Social Science Data with R ",author:"Brian J. Fogarty", price:" EUR 46.53",genre:"social sciences",img:src="../images/img12.jpg"},
+    {title:"Art: The Definitive Visual Guide",author:"Andrew Graham Dixon", price:" EUR 35.1",genre:"arts books",img:src="../images/img13.jpg"},
+    {title:"The Dark Side of the Mind: True Stories from My Life as a Forensic Psychologist",author:"Kerry Daynes", price:" EUR 7.74",genre:"biography & true stories",img:src="../images/img14.jpg"},
+    {title:"AQA AS and A Level English Language Student Book",author:"Dan Clayton and Angela Goddard", price:" EUR 32.34",genre:"english language teaching",img:src="../images/img15.jpg"},
+    {title:"The Economics of Health and Health Care ",author:"Sherman Folland and Allen Charles Goodman", price:" EUR 71.18",genre:"health & personal development",img:src="../images/img16.jpg"},
+    {title:"The HBD Cookbook: Life-changing recipes for long-term health and perfect weight",author:"Petronella Ravenshear", price:" EUR 12.02",genre:"lifestyle, cooking & leisure",img:src="../images/img17.jpg"},
+    {title:"Othello: A Routledge Study Guide and Sourcebook ",author:"Andrew Hadfield", price:" EUR 22.24",genre:"reference books",img:src="../images/img18.jpg"}
 
   ];
 
@@ -81,4 +81,18 @@ const books = [
       cart = [];
       updateCartDisplay();
     });
-  });
+
+    // Checkout button logic
+    $("#checkoutButton").click(function () {
+    if (cart.length > 0) {
+        alert(" Redirecting to Bookstore checkout.");
+        window.location.href = "../html/checkoutPage.html"; 
+         } else {
+                alert("Your cart is empty. Please add items before checking out.");
+        }
+    
+            });
+        });
+
+
+

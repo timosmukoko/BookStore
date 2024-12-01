@@ -1,9 +1,11 @@
 /* General Styles: Author Timos*/
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
+}
+
+main{
+    padding: 1%;
 }
 
 header {
@@ -19,18 +21,48 @@ header {
     padding-top: 15rem;
 } */
 
+.maps-address{
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.maps-address h2{
+  color:#3a3a3a;
+ 
+}
+
 #row-products {
     padding: 2rem;
 }
 
+#scroll-msg h1, p{
+    display: inline;
+}
+
 footer {
     text-align: center;
-    padding: 1rem;
+    /* padding: 1rem; */
+    padding-top: 1%;
     background-color: #3a3a3a;
     color: white;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     width: 100%;
+}
+
+li {
+    list-style-type: none;
+    /* Removes the bullet points */
+}
+
+/* a:link {
+    color: beige;
+    background-color: transparent;
+    text-decoration: none;
+} */
+.all-right-reserved{
+    background-color: #555;
+    padding-top: 1%;
 }
 
 /* Slider Styles */
@@ -104,13 +136,38 @@ footer {
 
 .hero {
     text-align: center;
-    padding: 100px 20px;
+    padding: 50px 20px;
     background-color: #f1f1f1;
 }
 
 .hero h1 {
     font-size: 48px;
     margin-bottom: 20px;
+}
+
+#welcome{
+    padding-top: 10%;
+    background-image: url("../images/cover.JPG");
+    background-size: cover;
+}
+
+#welcome p, h1{
+  color:#f4f4f4;
+}
+
+#gif{
+    padding-top: 5%;
+    background-color: #c9c7c7;
+    background-image: url("../images/book-gif.gif");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:#f1f1f1;
+}
+.card-img-top img{ 
+    height: 5px;
+    width: 40px;
 }
 
 .cta {
@@ -126,3 +183,34 @@ footer {
     object-fit: cover;
     width: 100%;
   }
+
+  /* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  

@@ -10,7 +10,12 @@
 
 <body>
     <header>
-        <h1>Login</h1>
+        <div id="scroll-msg">
+            <marquee>
+                <h1>BOOK STORE</h1>
+                <p>-Your one-stop shop for all your reading needs.</p>
+            </marquee>
+        </div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="../index.html"><img src="../images/logo/logo.png" alt="logo"></a>
@@ -28,7 +33,7 @@
                             <a class="nav-link active" aria-current="page" href="booksListingPage.html">Books</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="login.html">Login</a>
+                            <a class="nav-link active" aria-current="page" href="login.html">Sign in</a>
                         </li>
                     </ul>
                 </div>
@@ -48,7 +53,46 @@
         </form>
     </main>
     <footer>
-        <p>&copy; 2024 Book Store. All rights reserved.</p>
+        <div class="row">
+            <div class="col-md-3">
+                <h3> Book Store</h3>
+                <ul>
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="../html/booksListingPage.html">Books</a></li>
+                    <li><a href="../html/login.html">Sign in</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>ABOUT US</h3>
+                <ul class="no-bullets">
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                    <li>Privacy Policy</li>
+                    <li>About Us</li>
+                  </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>HELP CENTRE</h3>
+                <ul class="no-bullets">
+                    <li>Contact Us</li>
+                    <li>FAQs</li>
+                    <li>Store Locator</li>
+                    <li>My Account</li>
+                  </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>SERVICES</h3>
+                <ul class="no-bullets">
+                    <li>Shipping & Delivery</li>
+                    <li>Returns & Refunds</li>
+                    <li>Gift Vouchers</li>
+                    <li>Click and Collect</li>
+                  </ul>
+            </div>
+        </div>
+        <div class="row all-right-reserved">
+            <p>&copy; 2024 Book Store. All rights reserved</p>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../scripts/login.js"></script>

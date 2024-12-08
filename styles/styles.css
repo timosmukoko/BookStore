@@ -1,4 +1,4 @@
-/* General Styles: Author Timos*/
+Timos Mukoko
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -29,9 +29,9 @@ header {
     padding: 2rem;
 }
 
-#scroll-msg h1,
-p {
+#scroll-msg h1, p{
     display: inline;
+
 }
 
 footer {
